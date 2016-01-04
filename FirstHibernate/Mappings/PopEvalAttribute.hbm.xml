@@ -3,7 +3,7 @@
                assembly="FirstHibernate"
                namespace="FirstHibernate.Items"
                auto-import="true">
-  <class name="PopEvalAttribute" table ="POP_EVAL_ATTRIBUTE" schema="FS_FIADB">
+  <class name="PopEvalAttribute" table ="POP_EVAL_ATTRIBUTE" schema="FS_FIADB" lazy="true">
     <id name ="Cn" column="CN" >
       <generator class="assigned" />
     </id>
@@ -18,6 +18,8 @@
     <property name ="ModifiedBy" column="MODIFIED_BY" ></property>
     <property name ="ModifiedDate" column="MODIFIED_DATE" ></property>
     <property name ="ModifiedInInstance" column="MODIFIED_IN_INSTANCE" ></property>
+
+    <many-to-one name="PopEval" class="PopEval" column="EVAL_CN"></many-to-one>
 
   </class>
 

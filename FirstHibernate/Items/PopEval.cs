@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FirstHibernate.Items
 {
@@ -29,5 +30,8 @@ namespace FirstHibernate.Items
         public virtual string ModifiedBy { get; set; }
         public virtual DateTime? ModifiedDate { get; set; }
         public virtual string ModifiedInInstance { get; set; }
+
+        //Bi-directional association between PEA_PEV_FK
+        public virtual IList<PopEvalAttribute> PopEvalAttributes { get; set; }
     }
 }

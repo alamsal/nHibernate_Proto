@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using NHibernate;
 using NHibernate.Cfg;
 using FirstHibernate.Items;
@@ -35,7 +36,7 @@ namespace FirstHibernate
 
             //cfg.AddAssembly(typeof(PopEvalAttribute).Assembly);
             cfg.AddAssembly(typeof(PopEval).Assembly);
-             
+            
             ISessionFactory sessionFactory = cfg.BuildSessionFactory();
             ISession session = sessionFactory.OpenSession();
 
