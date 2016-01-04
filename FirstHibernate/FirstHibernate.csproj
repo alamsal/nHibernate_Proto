@@ -75,12 +75,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Items\PopEvalAttribute.hbm.xml">
+    <EmbeddedResource Include="Mappings\PopEvalAttribute.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Items\PopEval.hbm.xml" />
+    <EmbeddedResource Include="Mappings\PopEval.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

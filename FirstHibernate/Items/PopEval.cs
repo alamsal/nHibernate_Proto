@@ -1,32 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FirstHibernate.Items
 {
     public class PopEval
     {
-        public virtual string cn { get; set; }
-        public virtual string evalGrpCn { get; set; }
-        public virtual int rscd { get; set; }
-        public virtual int evalid { get; set; }
-        public virtual string evalDescr { get; set; }
-        public virtual int statecd { get; set; }
-        public virtual string locationNm { get; set; }
-        public virtual string reportYearNm { get; set; }
-        public virtual int startInvyr { get; set; }
-        public virtual int endInvyr { get; set; }
-        public virtual string landOnly { get; set; }
-        public virtual string timberlandOnly { get; set; }
-        public virtual string growthAcct { get; set; }
-        public virtual string estnMethod { get; set; }
-        public virtual string notes { get; set; }
-        public virtual string createdBy { get; set; }
-        public virtual DateTime createdDate { get; set; }
-        public virtual string createdInInstance { get; set; }
-        public virtual string modifiedBy { get; set; }
-        public virtual DateTime modifiedDate { get; set; }
-        public virtual string modifiedInInstance { get; set; }
+        public virtual string Cn { get; set; }
+        public virtual string EvalGrpCn { get; set; }
+        public virtual int Rscd { get; set; }
+        public virtual int Evalid { get; set; }
+        public virtual string EvalDescr { get; set; }
+        public virtual int Statecd { get; set; }
+        public virtual string LocationNm { get; set; }
+        public virtual string ReportYearNm { get; set; }
+        
+        public virtual int? StartInvyr { get; set; }
+        public virtual int? EndInvyr { get; set; }
+        
+        public virtual string LandOnly { get; set; }
+        public virtual string TimberlandOnly { get; set; }
+        public virtual string GrowthAcct { get; set; }
+        public virtual string EstnMethod { get; set; }
+        public virtual string Notes { get; set; }
+        
+        public virtual string CreatedBy { get; set; }
+        public virtual DateTime? CreatedDate { get; set; }
+        public virtual string CreatedInInstance { get; set; }
+        
+        public virtual string ModifiedBy { get; set; }
+        public virtual DateTime? ModifiedDate { get; set; }
+        public virtual string ModifiedInInstance { get; set; }
     }
 }

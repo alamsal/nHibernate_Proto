@@ -35,12 +35,9 @@ namespace FirstHibernate
 
             //cfg.AddAssembly(typeof(PopEvalAttribute).Assembly);
             cfg.AddAssembly(typeof(PopEval).Assembly);
-
-           
              
             ISessionFactory sessionFactory = cfg.BuildSessionFactory();
             ISession session = sessionFactory.OpenSession();
-           
 
             try
             {
