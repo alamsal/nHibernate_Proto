@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping  xmlns="urn:nhibernate-mapping-2.2"
+               assembly="FirstHibernate"
+               namespace="FirstHibernate.Items"
+               auto-import="true">
+  <class name="PopEvalAttribute" table ="POP_EVAL_ATTRIBUTE" schema="FS_FIADB">
+    <id name ="cn" column="CN" >
+      <generator class="assigned" />
+    </id>
+    <property name ="evalcn" column="EVAL_CN" ></property>
+    <property name ="attributenbr" column="ATTRIBUTE_NBR" ></property>
+    <property name ="statecd" column="STATECD" ></property>
+    <property name ="createdby" column="CREATED_BY" ></property>
+    <property name ="createddate" column="CREATED_DATE" ></property>
+    <property name ="createdininstance" column="CREATED_IN_INSTANCE" ></property>
+    <property name ="modifiedby" column="MODIFIED_BY" ></property>
+    <property name ="modifieddate" column="MODIFIED_DATE" ></property>
+    <property name ="modifiedinstance" column="MODIFIED_IN_INSTANCE" ></property>
+
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping  xmlns="urn:nhibernate-mapping-2.2"
+               assembly="FirstHibernate"
+               namespace="FirstHibernate.Items"
+               auto-import="true">
+  <class name="PopEval" table ="POP_EVAL" schema="FS_FIADB">
+    <id name ="cn" column="CN" >
+      <generator class="assigned" />
+    </id>
+    <property name ="evalGrpCn" column="EVAL_GRP_CN" ></property>
+    <property name ="rscd" column="RSCD" ></property>
+    <property name ="evalid" column="EVALID" ></property>
+    <property name ="evalDescr" column="EVAL_DESCR" ></property>
+    <property name ="statecd" column="STATECD" ></property>
+    <property name ="locationNm" column="LOCATION_NM" ></property>
+    <property name ="reportYearNm" column="REPORT_YEAR_NM" ></property>
+    <property name ="startInvyr" column="START_INVYR" ></property>
+    <property name ="endInvyr" column="END_INVYR" ></property>
+    <property name ="landOnly" column="LAND_ONLY" ></property>
+    <property name ="timberlandOnly" column="TIMBERLAND_ONLY" ></property>
+    <property name ="growthAcct" column="GROWTH_ACCT" ></property>
+    <property name ="estnMethod" column="ESTN_METHOD" ></property>
+    <property name ="notes" column="NOTES" ></property>
+    <property name ="createdBy" column="CREATED_BY" ></property>
+    <property name ="createdDate" column="CREATED_DATE" ></property>
+    <property name ="createdInInstance" column="CREATED_IN_INSTANCE" ></property>
+    <property name ="modifiedBy" column="MODIFIED_BY" ></property>
+    <property name ="modifiedDate" column="MODIFIED_DATE" ></property>
+    <property name ="modifiedInInstance" column="MODIFIED_IN_INSTANCE" ></property>
+  </class>
+</hibernate-mapping>
