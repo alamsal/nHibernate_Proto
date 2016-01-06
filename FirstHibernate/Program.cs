@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Cfg;
 using FirstHibernate.Items;
+using NHibernate.Criterion;
 using NHibernate.Transform;
 
 namespace FirstHibernate
@@ -65,12 +66,17 @@ namespace FirstHibernate
                 IList<PopEval> results = query.List<PopEval>();
 
                 */
+                
+                /*
                 string hqlQuery = @"select p.Cn, p.Rscd from PopEval p where p.Cn>100";
                 IQuery query = session.CreateQuery(hqlQuery);
 
                 IList list = query.List();
-
-
+                */
+                var val = session.CreateCriteria<PopEval>().SetProjection(Projections.ProjectionList()
+                                                                              .Add(Projections.Property("Cn"), "MyVal")
+                                                                              .Add(Projections.Property("EvalDescr"), "MyVal2")).
+                    SetResultTransformer(Transformers.AliasToBean<ColumnSubset>()).List<ColumnSubset>();
 
             }catch(Exception ex)
             {
