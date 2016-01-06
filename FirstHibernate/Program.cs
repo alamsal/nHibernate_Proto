@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Cfg;
@@ -54,7 +55,7 @@ namespace FirstHibernate
                 IList<PopEval> eval = criteria1.List<PopEval>();
                 int count2 = eval.Count;
                 */
-
+                /*
                 IQuery query = session.CreateQuery("from PopEval");
                 query.SetFirstResult(0);
                 query.SetMaxResults(5);
@@ -62,6 +63,14 @@ namespace FirstHibernate
                 //IList<ColumnSubset> vals = results.List<ColumnSubset>();
 
                 IList<PopEval> results = query.List<PopEval>();
+
+                */
+                string hqlQuery = @"select p.Cn, p.Rscd from PopEval p where p.Cn>100";
+                IQuery query = session.CreateQuery(hqlQuery);
+
+                IList list = query.List();
+
+
 
             }catch(Exception ex)
             {
