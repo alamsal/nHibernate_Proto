@@ -50,6 +50,10 @@
       <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NHibernate.JetDriver, Version=2.0.0.1002, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.JetDriver.2.0.0.1002\lib\net40\NHibernate.JetDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
       <Private>True</Private>
@@ -67,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessItems\StandInit.cs" />
+    <Compile Include="AccessItems\TreeInit.cs" />
     <Compile Include="Items\ColumnSubset.cs" />
     <Compile Include="Items\PopEval.cs" />
     <Compile Include="Items\PopEvalAttribute.cs" />
@@ -88,6 +94,11 @@
     <EmbeddedResource Include="Mappings\PopEval.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="AccessMappings\StandInit.hbm.xml" />
+    <EmbeddedResource Include="AccessMappings\TreeInit.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

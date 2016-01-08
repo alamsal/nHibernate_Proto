@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using FirstHibernate.AccessItems;
 using NHibernate;
 using NHibernate.Cfg;
 using FirstHibernate.Items;
-using NHibernate.Criterion;
-using NHibernate.Transform;
+using NHibernate.JetDriver;
 
 namespace FirstHibernate
 {
@@ -73,10 +72,16 @@ namespace FirstHibernate
 
                 IList list = query.List();
                 */
+                
+                /*
                 var val = session.CreateCriteria<PopEval>().SetProjection(Projections.ProjectionList()
                                                                               .Add(Projections.Property("Cn"), "MyVal")
                                                                               .Add(Projections.Property("EvalDescr"), "MyVal2")).
                     SetResultTransformer(Transformers.AliasToBean<ColumnSubset>()).List<ColumnSubset>();
+
+                */
+
+                AccessDatabaseConnection();
 
             }catch(Exception ex)
             {
@@ -86,5 +91,36 @@ namespace FirstHibernate
 
             Console.ReadLine();
         }
+
+
+        public static void AccessDatabaseConnection()
+        {
+            string accessDb = @"D:\Ashis_Work\FIA2FVS\TestHibernate\MyAccessTestData.accdb";
+            string connectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0}",accessDb);
+            Configuration cfg = new Configuration();
+            cfg.DataBaseIntegration(db1 =>
+                                        {
+                                            db1.ConnectionProvider<NHibernate.Connection.DriverConnectionProvider>();
+                                            db1.Dialect<JetDialect>();
+                                            db1.Driver<JetDriver>();
+                                            db1.ConnectionString = connectionString;
+
+                                            // enabled for testing
+                                            db1.LogFormattedSql = true;
+                                            db1.LogSqlInConsole = true;
+                                        });
+            cfg.AddAssembly(typeof (StandInit).Assembly);
+            ISessionFactory sessionFactory = cfg.BuildSessionFactory();
+            ISession session = sessionFactory.OpenSession();
+
+            string hqlQuery = @"select p.StandCn, p.StandId from StandInit p";
+            IQuery query = session.CreateQuery(hqlQuery);
+
+            IList list = query.List();
+
+            int myval = list.Count;
+
+        }
+
     }
 }

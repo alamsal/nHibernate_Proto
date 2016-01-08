@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping  xmlns="urn:nhibernate-mapping-2.2"
+               assembly="FirstHibernate"
+               namespace="FirstHibernate.AccessItems"
+               auto-import="true">
+
+  <class name="StandInit" table ="Tbl_StandInit" lazy ="true">
+    <id name ="StandCn" column="Stand_CN" >
+      <generator class="assigned" />
+    </id>
+    <property name ="StandId" column="Stand_ID" ></property>
+  </class>
+</hibernate-mapping>
