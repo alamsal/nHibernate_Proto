@@ -65,9 +65,9 @@ namespace FirstHibernate
                 IList<PopEval> results = query.List<PopEval>();
                 
                 string hqlQuery = @"select p.Cn, p.Rscd from PopEval p where p.Cn>100";
-                IQuery query = session.CreateQuery(hqlQuery);
+                IQuery query2 = session.CreateQuery(hqlQuery);
 
-                IList list = query.List();
+                IList list = query2.List();
                 
                 
                 var val = session.CreateCriteria<PopEval>().SetProjection(Projections.ProjectionList()
